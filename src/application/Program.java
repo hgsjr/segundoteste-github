@@ -45,17 +45,45 @@ public class Program {
 
         }
 
+        System.out.println();
+
         System.out.println("Account data:\n" + account + "\n");
 
-        System.out.print("Enter a deposit value: ");
-        double depositValue = sc.nextDouble();
-        account.deposit(depositValue);
-        System.out.println("Updated account data:\n" + account + "\n");
+        System.out.print("Choose an operation to be performed:\n" +
+                        "Type '1' to make a deposit;\n" +
+                        "Type '2' to withdraw money;\n" +
+                        "Type anything else to exit;\n" +
+                        "Operation: ");
 
-        System.out.print("Enter a withdraw value: ");
-        double withdrawValue = sc.nextDouble();
-        account.withdraw(withdrawValue);
-        System.out.println("Updated account data:\n" + account + "\n");
+        String command = sc.next();
+
+        System.out.println();
+
+        if (command.charAt(0) == '1') {
+
+            System.out.print("Enter a deposit value: ");
+            double depositValue = sc.nextDouble();
+            account.deposit(depositValue);
+            System.out.println("\nUpdated account data:\n" + account + "\n");
+
+        }
+
+        else if (command.charAt(0) == '2') {
+
+            System.out.print("Enter a withdraw value: ");
+            double withdrawValue = sc.nextDouble();
+            account.withdraw(withdrawValue);
+            System.out.println("\nUpdated account data:\n" + account + "\n");
+
+        }
+
+        else {
+
+            System.out.println("Not going to perform any operation.\n");
+
+        }
+
+        System.out.println("Closing application...");
 
     }
 
